@@ -2,12 +2,14 @@ package com.ajailani.grid_compose.util
 
 import androidx.compose.runtime.Composable
 
-class VerticalGridScope {
-    var itemSize = 0
+class GridScope {
+    var itemCount = 0
+        private set
+
     lateinit var itemContent: @Composable (index: Int) -> Unit
 
     fun items(count: Int, content: @Composable (index: Int) -> Unit) {
-        itemSize = count
+        itemCount = count
         itemContent = content
     }
 
