@@ -20,7 +20,7 @@ fun rememberVerticalGridMeasurePolicy(
         val verticalGapPx = verticalGap.roundToPx()
         val horizontalGapPx = horizontalGap.roundToPx()
 
-        val columnCount: Int = when (columns) {
+        val columnCount = when (columns) {
             is GridCellType.Fixed -> columns.count
             is GridCellType.Adaptive -> constraints.maxWidth / columns.minSize.roundToPx()
         }
@@ -41,7 +41,7 @@ fun rememberVerticalGridMeasurePolicy(
         layout(
             width = constraints.maxWidth,
             height = measureLayoutHeight(
-                rowMaxHeights = maxRowHeights,
+                maxRowHeights = maxRowHeights,
                 totalVerticalGapSize = totalVerticalGapSize
             )
         ) {
@@ -70,9 +70,7 @@ private fun measureMaxRowHeights(
     var maxHeightInRow = 0
 
     placeables.forEachIndexed { index, placeable ->
-        if (placeable.height > maxHeightInRow) {
-            maxHeightInRow = placeable.height
-        }
+        if (placeable.height > maxHeightInRow) maxHeightInRow = placeable.height
 
         if ((index + 1) % columnCount == 0 || index == placeables.lastIndex) {
             result.add(maxHeightInRow)
@@ -84,6 +82,6 @@ private fun measureMaxRowHeights(
 }
 
 private fun measureLayoutHeight(
-    rowMaxHeights: List<Int>,
+    maxRowHeights: List<Int>,
     totalVerticalGapSize: Int
-) = if (totalVerticalGapSize >= 0) rowMaxHeights.sum() + totalVerticalGapSize else 0
+) = if (totalVerticalGapSize >= 0) maxRowHeights.sum() + totalVerticalGapSize else 0
