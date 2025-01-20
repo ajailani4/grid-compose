@@ -30,6 +30,9 @@ fun ExampleItem(
             }
         }
         Spacer(modifier = Modifier.height(10.dp))
-        Text(text = description)
+        Text(
+            modifier = Modifier.padding(start = 10.dp),
+            text = description
+        )
     }
 }
