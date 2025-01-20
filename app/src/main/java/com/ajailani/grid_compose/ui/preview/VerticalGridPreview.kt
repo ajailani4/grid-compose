@@ -1,4 +1,4 @@
-package com.ajailani.grid_compose.component.preview
+package com.ajailani.grid_compose.ui.preview
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

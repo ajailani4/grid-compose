@@ -12,7 +12,7 @@ import com.ajailani.grid_compose.util.GridScope
 import com.ajailani.grid_compose.util.rememberVerticalGridMeasurePolicy
 
 @Composable
-fun Grid(
+internal fun Grid(
     modifier: Modifier = Modifier,
     orientation: GridOrientation,
     slots: GridCellType,
