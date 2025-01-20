@@ -1,12 +1,9 @@
 package com.ajailani.grid_compose.ui.preview
 
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,27 +22,20 @@ private fun HorizontalGridPreview() {
         ExampleItemData("2", "Dua", "test test test"),
         ExampleItemData("3", "Tiga", "test test test"),
         ExampleItemData("4", "Empat empat empat empat", "test\ntest\ntest"),
-        ExampleItemData("5", "Dua", "test\ntest\ntest\ntest"),
-        ExampleItemData("6", "Dua", "test\ntest\ntest\ntest")
+        ExampleItemData("5", "Lima", "test\ntest\ntest\ntest"),
+        ExampleItemData("6", "Enam", "test\ntest\ntest\ntest")
     )
 
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(text = "Grid fixed")
         Spacer(modifier = Modifier.height(10.dp))
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(400.dp)
-                .horizontalScroll(rememberScrollState())
+        HorizontalGrid(
+            rows = GridCellType.Fixed(3),
+            verticalGap = 10.dp,
+            horizontalGap = 5.dp
         ) {
-            HorizontalGrid(
-                rows = GridCellType.Fixed(3),
-                verticalGap = 10.dp,
-                horizontalGap = 5.dp
-            ) {
-                items(exampleItems) {
-                    ExampleItem(it.id, it.name, it.description)
-                }
+            items(exampleItems) {
+                ExampleItem(it.id, it.name, it.description)
             }
         }
     }

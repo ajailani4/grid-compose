@@ -23,7 +23,7 @@ fun rememberVerticalGridMeasurePolicy(
         val columnCount = when (columns) {
             is GridCellType.Fixed -> columns.count
             is GridCellType.Adaptive -> constraints.maxWidth / columns.minSize.roundToPx()
-        }
+        }.coerceAtLeast(1)
 
         val totalRow = ceil(gridScope.itemCount.toDouble() / columnCount.toDouble()).toInt()
         val totalHorizontalGapSize = horizontalGapPx * (columnCount - 1)

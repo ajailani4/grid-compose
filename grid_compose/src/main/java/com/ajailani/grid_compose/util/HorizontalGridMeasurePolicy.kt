@@ -1,6 +1,5 @@
 package com.ajailani.grid_compose.util
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.layout.MeasurePolicy
@@ -29,13 +28,11 @@ fun rememberHorizontalGridMeasurePolicy(
         val totalColumn = ceil(gridScope.itemCount.toDouble() / rowCount.toDouble()).toInt()
         val totalHorizontalGapSize = horizontalGapPx * (rowCount - 1)
         val totalVerticalGapSize = (verticalGapPx * (totalColumn - 1))
-        Log.d("HorizontalGridMeasurePolicy", "constraints maxHeight: ${constraints.maxHeight}")
         val placeables = measurables.map {
             it.measure(
                 Constraints.fixedHeight((constraints.maxHeight - totalVerticalGapSize) / rowCount)
             )
         }
-        measurables.map { it }
         val maxColumnHeights = measureMaxColumnHeights(
             placeables = placeables,
             rowCount = rowCount
