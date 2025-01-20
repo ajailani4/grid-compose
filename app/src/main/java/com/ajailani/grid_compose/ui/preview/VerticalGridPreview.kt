@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,13 +25,13 @@ private fun VerticalGridPreview() {
         ExampleItemData("3", "Tiga", "test test test"),
         ExampleItemData("4", "Satu", "test\ntest\ntest"),
         ExampleItemData("5", "Dua", "test\ntest\ntest\ntest"),
-//        XItemData("6", "Dua", "test\ntest\ntest\ntest")
+        ExampleItemData("6", "Dua", "test\ntest\ntest\ntest")
     )
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-//            .verticalScroll(rememberScrollState())
+            .verticalScroll(rememberScrollState())
     ) {
         Text(text = "Grid fixed")
         Spacer(modifier = Modifier.height(10.dp))
