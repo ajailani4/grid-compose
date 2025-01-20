@@ -1,4 +1,4 @@
-package com.ajailani.grid_compose.component.base
+package com.ajailani.grid_compose.base
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -9,6 +9,7 @@ import androidx.compose.ui.unit.dp
 import com.ajailani.grid_compose.util.GridCellType
 import com.ajailani.grid_compose.util.GridOrientation
 import com.ajailani.grid_compose.util.GridScope
+import com.ajailani.grid_compose.util.rememberHorizontalGridMeasurePolicy
 import com.ajailani.grid_compose.util.rememberVerticalGridMeasurePolicy
 
 @Composable
@@ -29,10 +30,9 @@ internal fun Grid(
             horizontalGap = horizontalGap
         )
     } else {
-        // Will be changed to rememberHorizontalGridMeasurePolicy
-        rememberVerticalGridMeasurePolicy(
+        rememberHorizontalGridMeasurePolicy(
             gridScope = gridScope,
-            columns = slots,
+            rows = slots,
             verticalGap = verticalGap,
             horizontalGap = horizontalGap
         )
