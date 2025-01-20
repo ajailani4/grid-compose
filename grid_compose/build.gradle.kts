@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.ajailani.grid_compose"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24

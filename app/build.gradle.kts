@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.ajailani.grid_compose"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.ajailani.grid_compose"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
