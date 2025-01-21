@@ -5,13 +5,14 @@ This library is just a bunch of grids but no laziness. You might be---or just me
 # Setup
 This library is available on JitPack repository. So, you need to add JitPack repository on `settings.gradle.kts`.
 ```kotlin
-dependencyResolutionManagement {  
-  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)  
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)  
     repositories {  
-  google()  
-        mavenCentral()  
+        google()  
+        mavenCentral()
         maven { url = uri("https://jitpack.io") }  // Add this line
- }}
+    }
+}
 ```
 Then, add the dependency.
 ```kotlin
@@ -28,15 +29,15 @@ You can implement fixed cell by providing fixed number of rows or columns.
 ```kotlin
 @Composable  
 fun VerticalGridExample() {
-	VerticalGrid(  
-	    columns = GridCellType.Fixed(3),  
-	    verticalGap = 20.dp,  
-	    horizontalGap = 10.dp  
-	) {
-		items(items = exampleItems) {
-			ExampleItem(it.id, it.name, it.description)
-		}
-	}
+    VerticalGrid(  
+        columns = GridCellType.Fixed(3),  
+	verticalGap = 20.dp,
+        horizontalGap = 10.dp  
+    ) {
+        items(items = exampleItems) {
+            ExampleItem(it.id, it.name, it.description)
+        }
+    }
 }
 ```
 <img width="383" alt="vertical_grid_fixed" src="https://github.com/user-attachments/assets/452e0b56-2464-4001-91b9-26bea8d3d57f" /><br><br>
@@ -45,16 +46,16 @@ fun VerticalGridExample() {
 ```kotlin
 @Composable  
 fun HorizontalGridExample() {
-	HorizontalGrid(  
-	    modifier = Modifier.height(500.dp),  
-	    rows = GridCellType.Fixed(4),  
-	    verticalGap = 10.dp,  
-	    horizontalGap = 5.dp  
-	) { 
-		items(exampleItems) {  
-			ExampleItem(it.id, it.name, it.description)  
-		}
-	}
+    HorizontalGrid(  
+        modifier = Modifier.height(500.dp),  
+        rows = GridCellType.Fixed(4),  
+        verticalGap = 10.dp,  
+        horizontalGap = 5.dp  
+    ) { 
+        items(exampleItems) {  
+            ExampleItem(it.id, it.name, it.description)  
+        }
+    }
 }
 ```
 <img width="291" alt="horizontal_grid_fixed" src="https://github.com/user-attachments/assets/bd2f0dbc-9933-446c-9114-c165461cc349" /><br><br>
@@ -66,15 +67,15 @@ You can define a grid with rows or columns adaptively---the grid row or column c
 ```kotlin
 @Composable  
 fun VerticalGridExample() {
-	VerticalGrid(  
-	    columns = GridCellType.Adaptive(150.dp),  
-	    verticalGap = 10.dp,  
-	    horizontalGap = 10.dp  
-	) {  
-		items(items = exampleItems) {  
-			ExampleItem(it.id, it.name, it.description)  
-		}  
-	}
+    VerticalGrid(  
+        columns = GridCellType.Adaptive(150.dp),  
+        verticalGap = 10.dp,  
+        horizontalGap = 10.dp  
+    ) {  
+        items(items = exampleItems) {  
+            ExampleItem(it.id, it.name, it.description)  
+        }
+    }
 }
 ```
 https://github.com/user-attachments/assets/bee12d23-3bb4-4a40-852a-e817d484e1ec
@@ -85,18 +86,18 @@ https://github.com/user-attachments/assets/bee12d23-3bb4-4a40-852a-e817d484e1ec
 ```kotlin
 @Composable  
 fun HorizontalGridExample() {
-	HorizontalGrid(  
-	    modifier = Modifier  
-	        .horizontalScroll(rememberScrollState())  
-	        .height(350.dp),  
-	    rows = GridCellType.Adaptive(150.dp),  
-	    verticalGap = 10.dp,  
-	    horizontalGap = 5.dp  
-	) {  
-		items(exampleItems) {  
-			ExampleItem(it.id, it.name, it.description)  
-		}  
-	}
+    HorizontalGrid(  
+        modifier = Modifier  
+            .horizontalScroll(rememberScrollState())  
+            .height(350.dp),  
+        rows = GridCellType.Adaptive(150.dp),  
+        verticalGap = 10.dp,  
+        horizontalGap = 5.dp  
+    ) {  
+        items(exampleItems) {  
+            ExampleItem(it.id, it.name, it.description)  
+        }  
+    }
 }
 ```
 https://github.com/user-attachments/assets/b1fefdaf-0078-4cbc-97d0-f6e00330614f
