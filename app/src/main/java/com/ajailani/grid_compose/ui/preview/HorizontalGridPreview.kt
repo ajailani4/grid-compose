@@ -1,5 +1,6 @@
 package com.ajailani.grid_compose.ui.preview
 
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -59,7 +60,9 @@ private fun HorizontalGridPreview() {
         )
         Spacer(modifier = Modifier.height(10.dp))
         HorizontalGrid(
-            modifier = Modifier.height(350.dp),
+            modifier = Modifier
+                .horizontalScroll(rememberScrollState())
+                .height(350.dp),
             rows = GridCellType.Adaptive(150.dp),
             verticalGap = 10.dp,
             horizontalGap = 5.dp

@@ -1,7 +1,5 @@
 package com.ajailani.grid_compose.component
 
-import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
@@ -20,7 +18,7 @@ fun HorizontalGrid(
     content: GridScope.() -> Unit
 ) {
     Grid(
-        modifier = modifier.horizontalScroll(rememberScrollState()),
+        modifier = modifier,
         orientation = GridOrientation.HORIZONTAL,
         slots = rows,
         verticalGap = verticalGap,
