@@ -1,6 +1,8 @@
 # Non Lazy Grid for Jetpack Compose
 
-This library is just a bunch of grids but no laziness. You might be---or just me---getting frustrated while working with LazyGrid inside a scrollable parent component. Let's say I have a LazyColumn as a parent, then I want to put a vertical grid inside. There are no other options but LazyVerticalGrid to work with. Unfortunately, after you run your app, you'll get a crash. It's because a vertically scrollable component---the LazyVerticalGrid---was measured with an infinity maximum height constraints. There are some solutions to solve that, like implementing fixed height to the grid, using Flow layout, etc. However, here's a small library I wrote to resolve that by creating a custom Layout.
+[![](https://jitpack.io/v/ajailani4/grid-compose.svg)](https://jitpack.io/#ajailani4/grid-compose)
+
+This library is just a bunch of grids but no laziness. You might be&mdash;or just me&mdash;getting frustrated while working with LazyGrid inside a scrollable parent component. Let's say I have a LazyColumn as a parent, then I want to put a vertical grid inside. There are no other options but LazyVerticalGrid to work with. Unfortunately, after you run your app, you'll get a crash. It's because a vertically scrollable component&mdash;the LazyVerticalGrid&mdash;was measured with an infinity maximum height constraints. There are some solutions to solve that, like implementing fixed height to the grid, using Flow layout, etc. However, here's a small library I wrote to resolve that by creating a custom Layout.
 
 # Setup
 This library is available on JitPack repository. So, you need to add JitPack repository on `settings.gradle.kts`.
@@ -61,7 +63,7 @@ fun HorizontalGridExample() {
 <img width="291" alt="horizontal_grid_fixed" src="https://github.com/user-attachments/assets/bd2f0dbc-9933-446c-9114-c165461cc349" /><br><br>
 
 ## Adaptive Cell
-You can define a grid with rows or columns adaptively---the grid row or column count depends on the parent size---that every cell has at least minSize space and all extra space distributed evenly.
+You can define a grid with rows or columns adaptively&mdash;the grid row or column count depends on the parent size&mdash;that every cell has at least minSize space and all extra space distributed evenly.
 
 **Vertical Grid**
 ```kotlin
